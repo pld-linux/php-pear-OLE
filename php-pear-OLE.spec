@@ -7,7 +7,7 @@ Summary:	%{_pearname} - package for reading and writing OLE containers
 Summary(pl):	%{_pearname} - pakiet do odczytu i zapisu kontenerów OLE
 Name:		php-pear-%{_pearname}
 Version:	0.5
-Release:	2
+Release:	3
 License:	PHP
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
@@ -41,7 +41,8 @@ Ta klasa ma w PEAR status: %{_status}.
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/PPS
 
-install %{_pearname}-%{version}/*.php $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}
+install %{_pearname}-%{version}/OLE.php $RPM_BUILD_ROOT%{php_pear_dir}/
+install %{_pearname}-%{version}/PPS.php $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}
 install %{_pearname}-%{version}/PPS/*.php $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/PPS
 
 %clean
@@ -49,7 +50,5 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%dir %{php_pear_dir}/%{_class}
-%dir %{php_pear_dir}/%{_class}/PPS
-%{php_pear_dir}/%{_class}/*.php
-%{php_pear_dir}/%{_class}/PPS/*.php
+%{php_pear_dir}/%{_class}.php
+%{php_pear_dir}/%{_class}

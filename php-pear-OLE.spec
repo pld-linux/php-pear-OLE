@@ -1,5 +1,3 @@
-# ToDo:
-# - pl description
 %include	/usr/lib/rpm/macros.php
 %define         _class          OLE
 %define		_status		alpha
@@ -23,9 +21,17 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 This package allows reading and writing of OLE (Object Linking and
 Embedding) files, the format used as container for Excel, Word and
 other MS file formats. Documentation for the OLE format can be found
-at: http://user.cs.tu-berlin.de/~schwartz/pmh/guide.html
+at: http://user.cs.tu-berlin.de/~schwartz/pmh/guide.html .
 
 This class has in PEAR status: %{_status}.
+
+%description -l pl
+Ten pakiet pozwala na odczyt i zapis plików OLE (Object Linking and
+Embedding), formatu u¿ywanego jako kontener dla Excela, Worda i innych
+formatów plików MS. Dokumentacjê dla formatu OLE mo¿na znale¼æ pod
+http://user.cs.tu-berlin.de/~schwartz/pmh/guide.html .
+
+Ta klasa ma w PEAR status: %{_status}.
 
 %prep
 %setup -q -c
@@ -42,6 +48,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%dir %{php_pear_dir}/%{_class}
 %dir %{php_pear_dir}/%{_class}/PPS
 %{php_pear_dir}/%{_class}/*.php
 %{php_pear_dir}/%{_class}/PPS/*.php

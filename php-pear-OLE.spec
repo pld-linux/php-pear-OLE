@@ -1,10 +1,10 @@
 %include	/usr/lib/rpm/macros.php
-%define         _class          OLE
+%define		_class		OLE
 %define		_status		beta
 %define		_pearname	%{_class}
 
-Summary:	%{_pearname} - Package for reading and writing OLE containers
-Summary(pl):	%{_pearname} - Pakiet do odczytu i zapisu kontenerów OLE
+Summary:	%{_pearname} - package for reading and writing OLE containers
+Summary(pl):	%{_pearname} - pakiet do odczytu i zapisu kontenerów OLE
 Name:		php-pear-%{_pearname}
 Version:	0.5
 Release:	1

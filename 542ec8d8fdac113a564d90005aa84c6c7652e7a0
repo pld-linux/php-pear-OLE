@@ -1,0 +1,3 @@
+- install OLE.php in %{php_pear_dir}
+- simplified %files
+- release 3

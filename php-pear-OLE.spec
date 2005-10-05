@@ -7,7 +7,7 @@ Summary:	%{_pearname} - package for reading and writing OLE containers
 Summary(pl):	%{_pearname} - pakiet do odczytu i zapisu kontenerów OLE
 Name:		php-pear-%{_pearname}
 Version:	0.5
-Release:	3.1
+Release:	4
 License:	PHP
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz

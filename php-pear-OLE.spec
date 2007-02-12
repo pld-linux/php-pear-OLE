@@ -4,7 +4,7 @@
 %define		_pearname	%{_class}
 
 Summary:	%{_pearname} - package for reading and writing OLE containers
-Summary(pl):	%{_pearname} - pakiet do odczytu i zapisu kontenerów OLE
+Summary(pl.UTF-8):   %{_pearname} - pakiet do odczytu i zapisu kontenerÃ³w OLE
 Name:		php-pear-%{_pearname}
 Version:	0.5
 Release:	5
@@ -28,10 +28,10 @@ at: http://user.cs.tu-berlin.de/~schwartz/pmh/guide.html .
 
 In PEAR status of this package is: %{_status}.
 
-%description -l pl
-Ten pakiet pozwala na odczyt i zapis plików OLE (Object Linking and
-Embedding), formatu u¿ywanego jako kontener dla Excela, Worda i innych
-formatów plików MS. Dokumentacjê dla formatu OLE mo¿na znale¼æ pod
+%description -l pl.UTF-8
+Ten pakiet pozwala na odczyt i zapis plikÃ³w OLE (Object Linking and
+Embedding), formatu uÅ¼ywanego jako kontener dla Excela, Worda i innych
+formatÃ³w plikÃ³w MS. DokumentacjÄ™ dla formatu OLE moÅ¼na znaleÅºÄ‡ pod
 http://user.cs.tu-berlin.de/~schwartz/pmh/guide.html .
 
 Ta klasa ma w PEAR status: %{_status}.

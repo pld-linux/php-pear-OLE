@@ -4,7 +4,7 @@
 %define		_pearname	%{_class}
 
 Summary:	%{_pearname} - package for reading and writing OLE containers
-Summary(pl.UTF-8):   %{_pearname} - pakiet do odczytu i zapisu kontenerów OLE
+Summary(pl.UTF-8):	%{_pearname} - pakiet do odczytu i zapisu kontenerów OLE
 Name:		php-pear-%{_pearname}
 Version:	0.5
 Release:	5

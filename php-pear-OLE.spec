@@ -2,16 +2,15 @@
 %define		_class		OLE
 %define		_status		beta
 %define		_pearname	%{_class}
-
 Summary:	%{_pearname} - package for reading and writing OLE containers
 Summary(pl.UTF-8):	%{_pearname} - pakiet do odczytu i zapisu kontenerów OLE
 Name:		php-pear-%{_pearname}
-Version:	0.5
-Release:	5
+Version:	0.6.1
+Release:	1
 License:	PHP
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
-# Source0-md5:	60da44ce636167ea3bb686860a8d3dcd
+# Source0-md5:	6e85cd3911270ad9cb8a77228d73fe8a
 URL:		http://pear.php.net/package/OLE/
 BuildRequires:	php-pear-PEAR
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
@@ -24,7 +23,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 This package allows reading and writing of OLE (Object Linking and
 Embedding) files, the format used as container for Excel, Word and
 other MS file formats. Documentation for the OLE format can be found
-at: http://user.cs.tu-berlin.de/~schwartz/pmh/guide.html .
+at: <http://user.cs.tu-berlin.de/~schwartz/pmh/guide.html>.
 
 In PEAR status of this package is: %{_status}.
 
@@ -32,7 +31,7 @@ In PEAR status of this package is: %{_status}.
 Ten pakiet pozwala na odczyt i zapis plików OLE (Object Linking and
 Embedding), formatu używanego jako kontener dla Excela, Worda i innych
 formatów plików MS. Dokumentację dla formatu OLE można znaleźć pod
-http://user.cs.tu-berlin.de/~schwartz/pmh/guide.html .
+<http://user.cs.tu-berlin.de/~schwartz/pmh/guide.html>.
 
 Ta klasa ma w PEAR status: %{_status}.
 

@@ -1,0 +1,116 @@
+diff -urN OLE-1.0.0RC2.org/OLE/ChainedBlockStream.php OLE-1.0.0RC2/OLE/ChainedBlockStream.php
+--- OLE-1.0.0RC2.org/OLE/ChainedBlockStream.php	2012-01-26 02:28:26.000000000 +0100
++++ OLE-1.0.0RC2/OLE/ChainedBlockStream.php	2014-06-18 11:44:19.000000000 +0200
+@@ -17,7 +17,7 @@
+  * @package    OLE
+  * @author     Christian Schmidt <schmidt@php.net>
+  * @license    http://www.php.net/license/3_0.txt  PHP License 3.0
+- * @version    CVS: $Id: ChainedBlockStream.php 322771 2012-01-26 01:24:20Z clockwerx $
++ * @version    CVS: $Id$
+  * @link       http://pear.php.net/package/OLE
+  * @since      File available since Release 0.6.0
+  */
+diff -urN OLE-1.0.0RC2.org/OLE/PPS/File.php OLE-1.0.0RC2/OLE/PPS/File.php
+--- OLE-1.0.0RC2.org/OLE/PPS/File.php	2012-01-26 02:28:26.000000000 +0100
++++ OLE-1.0.0RC2/OLE/PPS/File.php	2014-06-18 11:44:19.000000000 +0200
+@@ -17,7 +17,7 @@
+ // | Based on OLE::Storage_Lite by Kawai, Takanori                        |
+ // +----------------------------------------------------------------------+
+ //
+-// $Id: File.php 252097 2008-02-02 21:00:37Z schmidt $
++// $Id$
+ 
+ 
+ require_once 'OLE/PPS.php';
+@@ -47,7 +47,8 @@
+     */
+     function OLE_PPS_File($name)
+     {
+-        $this->_tmp_dir = System::tmpdir();
++        $system = new System();
++        $this->_tmp_dir = $system->tmpdir();
+         $this->OLE_PPS(
+             null, 
+             $name,
+diff -urN OLE-1.0.0RC2.org/OLE/PPS/Root.php OLE-1.0.0RC2/OLE/PPS/Root.php
+--- OLE-1.0.0RC2.org/OLE/PPS/Root.php	2012-01-26 02:28:26.000000000 +0100
++++ OLE-1.0.0RC2/OLE/PPS/Root.php	2014-06-18 11:44:19.000000000 +0200
+@@ -17,7 +17,7 @@
+ // | Based on OLE::Storage_Lite by Kawai, Takanori                        |
+ // +----------------------------------------------------------------------+
+ //
+-// $Id: Root.php 322720 2012-01-25 12:56:57Z clockwerx $
++// $Id$
+ 
+ 
+ require_once 'OLE/PPS.php';
+@@ -53,7 +53,8 @@
+     */
+     function OLE_PPS_Root($time_1st, $time_2nd, $raChild)
+     {
+-        $this->_tmp_dir = System::tmpdir();
++        $system = new System();
++        $this->_tmp_dir = $system->tmpdir();
+         $this->OLE_PPS(
+            null, 
+            OLE::Asc2Ucs('Root Entry'),
+@@ -620,7 +621,7 @@
+       else
+         fwrite($FILE, pack("V", -2));
+ 
+-      fwrite($FILE, pack("V", 1));
++      fwrite($FILE, pack("V", $num_sb_blocks));
+ 
+       // Extra BDList Start, Count
+       if($bbd_info["blockchain_list_entries"] < $bbd_info["header_blockchain_list_entries"])
+diff -urN OLE-1.0.0RC2.org/OLE/PPS.php OLE-1.0.0RC2/OLE/PPS.php
+--- OLE-1.0.0RC2.org/OLE/PPS.php	2012-01-26 02:28:26.000000000 +0100
++++ OLE-1.0.0RC2/OLE/PPS.php	2014-06-18 11:44:19.000000000 +0200
+@@ -17,7 +17,7 @@
+ // | Based on OLE::Storage_Lite by Kawai, Takanori                        |
+ // +----------------------------------------------------------------------+
+ //
+-// $Id: PPS.php 322771 2012-01-26 01:24:20Z clockwerx $
++// $Id$
+ 
+ 
+ require_once 'PEAR.php';
+diff -urN OLE-1.0.0RC2.org/OLE.php OLE-1.0.0RC2/OLE.php
+--- OLE-1.0.0RC2.org/OLE.php	2012-01-26 02:28:26.000000000 +0100
++++ OLE-1.0.0RC2/OLE.php	2014-06-18 11:44:19.000000000 +0200
+@@ -17,7 +17,7 @@
+ // | Based on OLE::Storage_Lite by Kawai, Takanori                        |
+ // +----------------------------------------------------------------------+
+ //
+-// $Id: OLE.php 260165 2008-05-23 16:33:58Z schmidt $
++// $Id$
+ 
+ 
+ /**
+@@ -475,7 +475,7 @@
+     * @param string $ascii The ASCII string to transform
+     * @return string The string in Unicode
+     */
+-    function Asc2Ucs($ascii)
++    static function Asc2Ucs($ascii)
+     {
+         $rawname = '';
+         for ($i = 0; $i < strlen($ascii); $i++) {
+@@ -493,7 +493,7 @@
+     * @param integer $date A timestamp 
+     * @return string The string for the OLE container
+     */
+-    function LocalDate2OLE($date = null)
++    static function LocalDate2OLE($date = null)
+     {
+         if (!isset($date)) {
+             return "\x00\x00\x00\x00\x00\x00\x00\x00";
+@@ -538,7 +538,7 @@
+     * @access public
+     * @static
+     */
+-    function OLE2LocalDate($string)
++    static function OLE2LocalDate($string)
+     {
+         if (strlen($string) != 8) {
+             return new PEAR_Error("Expecting 8 byte string");

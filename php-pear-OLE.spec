@@ -2,7 +2,6 @@
 %define		pearname	OLE
 %define		subver	RC2
 %define		rel		2
-%include	/usr/lib/rpm/macros.php
 Summary:	%{pearname} - package for reading and writing OLE containers
 Summary(pl.UTF-8):	%{pearname} - pakiet do odczytu i zapisu kontenerów OLE
 Name:		php-pear-%{pearname}

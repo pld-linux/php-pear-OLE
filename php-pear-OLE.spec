@@ -39,7 +39,7 @@ Ta klasa ma w PEAR status: %{status}.
 %prep
 %pear_package_setup
 cd ./%{php_pear_dir}
-%patch0 -p1
+%patch -P0 -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT

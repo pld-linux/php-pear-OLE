@@ -1,7 +1,7 @@
 %define		status		beta
 %define		pearname	OLE
 %define		subver	RC2
-%define		rel		2
+%define		rel		3
 Summary:	%{pearname} - package for reading and writing OLE containers
 Summary(pl.UTF-8):	%{pearname} - pakiet do odczytu i zapisu kontenerów OLE
 Name:		php-pear-%{pearname}

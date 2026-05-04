@@ -1,18 +1,15 @@
-%define		status		beta
+%define		status		stable
 %define		pearname	OLE
-%define		subver	RC2
-%define		rel		3
 Summary:	%{pearname} - package for reading and writing OLE containers
 Summary(pl.UTF-8):	%{pearname} - pakiet do odczytu i zapisu kontenerów OLE
 Name:		php-pear-%{pearname}
-Version:	1.0.0
-Release:	0.%{subver}.%{rel}
+Version:	1.0.1
+Release:	1
 License:	PHP
 Group:		Development/Languages/PHP
-Source0:	http://pear.php.net/get/%{pearname}-%{version}%{subver}.tgz
-# Source0-md5:	5ef0283689ddf6b41de0588bce995c89
-Patch0:		%{name}-git.patch
-URL:		http://pear.php.net/package/OLE/
+Source0:	https://pear.php.net/get/%{pearname}-%{version}.tgz
+# Source0-md5:	c5abc46db7d08ecf582dd1081b940416
+URL:		https://pear.php.net/package/OLE/
 BuildRequires:	php-pear-PEAR
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 BuildRequires:	rpmbuild(macros) >= 1.580
@@ -38,8 +35,6 @@ Ta klasa ma w PEAR status: %{status}.
 
 %prep
 %pear_package_setup
-cd ./%{php_pear_dir}
-%patch -P0 -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT
